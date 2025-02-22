@@ -12,10 +12,10 @@ O TPC2 consiste em construir um serviço em nodejs, que consuma a API de dados s
 
 ## 📌 Funcionalidades
 
--Página Principal: Listar alunos, cursos e instrumentos.
--Página de Alunos: Apresentar uma tabela com informações dos alunos. Ao clicar numa linha, redireciona para a página individual do aluno.
--Página de Cursos: Apresentar uma tabela com os cursos disponíveis. Ao clicar num curso, redireciona para a página do curso, que inclui a lista de alunos inscritos.
--Página de Instrumentos: Apresentar uma tabela com os instrumentos. Ao clicar num instrumento, redireciona para a página do instrumento, que inclui a lista de alunos que o utilizam.
+- Página Principal: Listar alunos, cursos e instrumentos.
+- Página de Alunos: Apresentar uma tabela com informações dos alunos. Ao clicar numa linha, redireciona para a página individual do aluno.
+- Página de Cursos: Apresentar uma tabela com os cursos disponíveis. Ao clicar num curso, redireciona para a página do curso, que inclui a lista de alunos inscritos.
+- Página de Instrumentos: Apresentar uma tabela com os instrumentos. Ao clicar num instrumento, redireciona para a página do instrumento, que inclui a lista de alunos que o utilizam.
 
 ## 📌 Como executar?
 
