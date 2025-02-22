@@ -21,7 +21,7 @@ O TPC2 consiste em construir um serviço em nodejs, que consuma a API de dados s
 
 1. Iniciar JSON 
 ```
-json-server --w dataset_new.json
+json-server --w db.json
 ```
 
 2. Iniciar o servidor main.js
