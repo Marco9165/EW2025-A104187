@@ -1,0 +1,39 @@
+extends layout
+
+block content
+  style.
+    .error-container {
+      margin: 50px auto;
+      max-width: 800px;
+      text-align: center;
+      font-family: 'Arial', sans-serif;
+      padding: 30px;
+      background-color: #f8f9fa;
+      border-radius: 10px;
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    h1 {
+      color: #e74c3c;
+      font-family: 'Roboto', sans-serif;
+      font-size: 36px;
+    }
+
+    h2 {
+      color: #2c3e50;
+      font-size: 24px;
+    }
+
+    pre {
+      background-color: #ecf0f1;
+      padding: 15px;
+      border-radius: 6px;
+      text-align: left;
+      color: #34495e;
+      font-size: 14px;
+    }
+
+  .error-container
+    h1= message
+    h2= error.status
+    pre #{error.stack}
