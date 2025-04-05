@@ -1,0 +1,51 @@
+extends layout
+
+block content
+    .w3-light-grey
+        .w3-container.w3-margin-top
+            .w3-card-4.w3-white.w3-round-large
+                header.w3-container.w3-grey.w3-padding-16
+                    h2 Formulário de Estudante
+                form.w3-container.w3-padding(method="POST")
+                    fieldset.w3-margin-bottom
+                        legend.w3-text-grey
+                            b Informações do Estudante
+                        label
+                            b ID
+                        input.w3-input.w3-border.w3-round(type="text" name="id" required)
+                        label
+                            b Nome
+                        input.w3-input.w3-border.w3-round(type="text" name="nome" required)
+                        label
+                            b GitHub
+                        input.w3-input.w3-border.w3-round(type="text" name="git" required)
+                    fieldset.w3-margin-bottom
+                        legend.w3-text-grey
+                            b Trabalhos de Casa (TPCs)
+                        .w3-row-padding
+                            .w3-half
+                                input.w3-check(type="checkbox" name="tpc1" value="1")
+                                label TPC1
+                                br
+                                input.w3-check(type="checkbox" name="tpc2" value="1")
+                                label TPC2
+                                br
+                                input.w3-check(type="checkbox" name="tpc3" value="1")
+                                label TPC3
+                                br
+                                input.w3-check(type="checkbox" name="tpc4" value="1")
+                                label TPC4
+                            .w3-half
+                                input.w3-check(type="checkbox" name="tpc5" value="1")
+                                label TPC5
+                                br
+                                input.w3-check(type="checkbox" name="tpc6" value="1")
+                                label TPC6
+                                br
+                                input.w3-check(type="checkbox" name="tpc7" value="1")
+                                label TPC7
+                                br
+                                input.w3-check(type="checkbox" name="tpc8" value="1")
+                                label TPC8
+                    .w3-center
+                        button.w3-button.w3-grey.w3-round.w3-large.w3-margin-top(type="submit") Registar

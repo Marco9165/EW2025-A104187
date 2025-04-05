@@ -1,0 +1,31 @@
+extends layout
+
+block content
+    .w3-light-grey
+        .w3-container.w3-margin-top
+            .w3-card-4.w3-white.w3-round-large
+                header.w3-container.w3-teal.w3-center.w3-padding-16
+                    h1
+                        b Perfil do Aluno
+                .w3-container.w3-padding
+                    ul.w3-ul.w3-card.w3-white.w3-border.w3-round.w3-padding
+                        li
+                            b Nome:
+                            |  #{aluno.nome}
+                        li
+                            b Número:
+                            |  #{aluno._id}
+                        li
+                            b GitHub:
+                            a.w3-text-blue(href=aluno.git target="_blank") #{aluno.git}
+                .w3-container.w3-padding
+                    h3.w3-text-teal
+                        b Trabalhos de Casa
+                    .w3-row-padding
+                        - const tpcKeys = Object.keys(aluno).filter(key => key.startsWith('tpc') && aluno[key] === "1");
+                        if tpcKeys.length
+                            .w3-panel.w3-padding
+                                each key in tpcKeys
+                                    span.w3-tag.w3-green.w3-round.w3-margin #{key.toUpperCase()}
+                        else
+                            p.w3-text-red Nenhum TPC concluído.

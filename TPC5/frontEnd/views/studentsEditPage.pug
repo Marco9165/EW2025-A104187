@@ -1,0 +1,59 @@
+extends layout
+
+block content
+    .w3-light-grey
+        .w3-container.w3-margin-top
+            .w3-card-4.w3-white.w3-round-large
+                header.w3-container.w3-grey.w3-padding-16
+                    h2 Editar Estudante
+                form#editarEstudante.w3-container.w3-padding(method="POST")
+                    fieldset.w3-margin-bottom
+                        legend.w3-text-grey
+                            b Informações do Estudante
+                        label
+                            b ID
+                        input.w3-input.w3-border.w3-round(type="text" name="id" value=a._id readonly)
+                        label
+                            b Nome
+                        input.w3-input.w3-border.w3-round(type="text" name="nome" value=a.nome required)
+                        label
+                            b GitHub
+                        input.w3-input.w3-border.w3-round(type="text" name="git" value=a.git required)
+                    fieldset.w3-margin-bottom
+                        legend.w3-text-grey
+                            b Trabalhos de Casa (TPCs)
+                        .w3-row-padding
+                            .w3-half
+                                - for (let i = 1; i <= 4; i++)
+                                    - let tpc = "tpc" + i
+                                    label
+                                        input.w3-check(type="checkbox" name=`tpc${i}` value="1" checked=a[tpc] === "1")
+                                        | TPC#{i}
+                                    br
+                            .w3-half
+                                - for (let i = 5; i <= 8; i++)
+                                    - let tpc = "tpc" + i
+                                    label
+                                        input.w3-check(type="checkbox" name=`tpc${i}` value="1" checked=a[tpc] === "1")
+                                        | TPC#{i}
+                                    br
+                    .w3-center
+                        button.w3-button.w3-grey.w3-round.w3-large.w3-margin-top(type="submit") Guardar Alterações
+
+    script.
+        document.getElementById('editarEstudante').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            for (let i = 1; i <= 8; i++) {
+                const checkbox = document.querySelector(`input[name="tpc${i}"]`);
+                if (!checkbox.checked) {
+                    const hiddenInput = document.createElement('input');
+                    hiddenInput.type = 'hidden';
+                    hiddenInput.name = `tpc${i}`;
+                    hiddenInput.value = '0';
+                    this.appendChild(hiddenInput);
+                }
+            }
+
+            this.submit();
+        });

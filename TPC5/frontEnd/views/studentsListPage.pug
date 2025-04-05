@@ -1,0 +1,33 @@
+extends layout
+
+block content 
+    .w3-card-4 
+        header.w3-container.w3-orange
+            h1 
+                span Lista de Alunos
+                a.w3-btn.w3-round.w3-grey.w3-center(style='margin-left: 40px', href='/alunos/registo') +
+        
+        .w3-container 
+            table.w3-table-all
+                tr 
+                    th ID
+                    th Nome
+                    th GitHub
+                    th Ações
+                each aluno in slist 
+                    tr
+                        td= aluno._id 
+                        td
+                            a(href="/alunos/" + aluno._id)= aluno.nome 
+                        td= aluno.git
+                        td 
+                            span 
+                                a(href="/alunos/edit/" + aluno._id, class='w3-btn w3-grey w3-round w3-small') 
+                                    i.fa.fa-pencil  ✏️
+                                    |  Edit
+                            span 
+                                a(href="/alunos/delete/" + aluno._id, class='w3-btn w3-red w3-round w3-small') 
+                                    i.fa.fa-times
+                                    |  Delete
+
+
