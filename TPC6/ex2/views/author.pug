@@ -1,0 +1,40 @@
+extends layout
+
+block content
+  .w3-container.w3-white.w3-margin.w3-padding-large
+    h2.w3-text-blue Autor: #{authorName}
+    p.w3-text-grey
+      strong ID do Autor: 
+      | #{authorId}
+    
+    h3.w3-text-blue Livros do Autor
+    p.w3-text-grey
+      strong Total de livros: 
+      | #{totalBooks}
+    
+    if books && books.length > 0
+      .w3-responsive
+        table.w3-table.w3-striped.w3-bordered.w3-hoverable
+          thead
+            tr.w3-blue
+              th ID
+              th Título
+              th Data de Publicação
+              th Páginas
+              th Rating
+          tbody
+            each book in books
+              tr
+                td
+                  a.w3-text-blue(href=`/${book.bookId}`) #{book.bookId}
+                td #{book.title}
+                td #{book.publishDate || 'N/A'}
+                td #{book.pages || 'N/A'}
+                td #{book.rating || 'N/A'}
+    else
+      .w3-panel.w3-yellow.w3-center
+        h3 Nenhum livro encontrado
+        p Este autor não tem livros na base de dados.
+    
+    .w3-margin-top.w3-center
+      a.w3-button.w3-blue.w3-large(href="/") ← Voltar à Lista Principal

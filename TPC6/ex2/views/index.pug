@@ -1,0 +1,43 @@
+extends layout
+
+block content
+  .w3-container.w3-white.w3-margin.w3-padding-large
+    h2.w3-center.w3-text-blue Lista de Livros
+    
+    if books && books.length > 0
+      .w3-responsive
+        table.w3-table.w3-striped.w3-bordered.w3-hoverable
+          thead
+            tr.w3-blue
+              th ID
+              th Título
+              th Autor
+              th Data de Publicação
+              th Páginas
+          tbody
+            each book in books
+              tr
+                td
+                  a.w3-text-blue(href=`/${book.bookId}`) #{book.bookId}
+                td #{book.title}
+                td
+                  if book.author
+                    if Array.isArray(book.author)
+                      each author, index in book.author
+                        if index > 0
+                          | , 
+                        a.w3-text-blue(href=`/entidades/${generateAuthorId(author)}`) #{author}
+                    else
+                      - var authors = book.author.toString().split(/[,&]/).map(a => a.trim()).filter(a => a.length > 0)
+                      each author, index in authors
+                        if index > 0
+                          | , 
+                        a.w3-text-blue(href=`/entidades/${generateAuthorId(author)}`) #{author}
+                  else
+                    | N/A
+                td #{book.publishDate || 'N/A'}
+                td #{book.pages || 'N/A'}
+    else
+      .w3-panel.w3-yellow.w3-center
+        h3 Nenhum livro encontrado
+        p Não há livros disponíveis na base de dados.

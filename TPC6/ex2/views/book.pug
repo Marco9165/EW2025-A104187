@@ -1,0 +1,94 @@
+extends layout
+
+block content
+  .w3-container.w3-white.w3-margin.w3-padding-large
+    .w3-row
+      .w3-col.l8.m12
+        h2.w3-text-blue #{book.title}
+        
+        if book.series
+          p.w3-text-grey
+            strong Série: 
+            | #{book.series}
+        
+        .w3-row-padding.w3-margin-top
+          .w3-col.s6.m4
+            p
+              strong ID: 
+              | #{book.bookId}
+          .w3-col.s6.m4
+            p
+              strong Autor(es): 
+              if book.author
+                if Array.isArray(book.author)
+                  each author, index in book.author
+                    if index > 0
+                      | , 
+                    a.w3-text-blue(href=`/entidades/${generateAuthorId(author)}`) #{author}
+                else
+                  - var authors = book.author.toString().split(/[,&]/).map(a => a.trim()).filter(a => a.length > 0)
+                  each author, index in authors
+                    if index > 0
+                      | , 
+                    a.w3-text-blue(href=`/entidades/${generateAuthorId(author)}`) #{author}
+              else
+                | N/A
+          .w3-col.s6.m4
+            p
+              strong Rating: 
+              | #{book.rating || 'N/A'}
+        
+        .w3-row-padding
+          .w3-col.s6.m4
+            p
+              strong Páginas: 
+              | #{book.pages || 'N/A'}
+          .w3-col.s6.m4
+            p
+              strong Editora: 
+              | #{book.publisher || 'N/A'}
+          .w3-col.s6.m4
+            p
+              strong Data de Publicação: 
+              | #{book.publishDate || 'N/A'}
+        
+        if book.isbn
+          p
+            strong ISBN: 
+            | #{book.isbn}
+        
+        if book.language
+          p
+            strong Idioma: 
+            | #{book.language}
+        
+        if book.description
+          .w3-margin-top
+            h4.w3-text-blue Descrição
+            p.w3-text-grey #{book.description}
+        
+        if book.genres
+          .w3-margin-top
+            h4.w3-text-blue Géneros
+            .w3-row
+              each genre in book.genres
+                .w3-col.s6.m4.l3
+                  span.w3-tag.w3-blue.w3-margin-right.w3-margin-bottom #{genre}
+        
+        if book.characters && book.characters.length > 0
+          .w3-margin-top
+            h4.w3-text-blue Personagens
+            .w3-row
+              each character in book.characters.slice(0, 10)
+                .w3-col.s6.m4.l3
+                  span.w3-tag.w3-light-blue.w3-margin-right.w3-margin-bottom #{character}
+              if book.characters.length > 10
+                p.w3-text-grey ... e mais #{book.characters.length - 10} personagens
+      
+      .w3-col.l4.m12
+        if book.coverImg
+          .w3-center.w3-margin-top
+            img.w3-image.w3-border(src=book.coverImg, alt=book.title, style="max-width:300px")
+    
+    .w3-margin-top.w3-center
+      a.w3-button.w3-blue.w3-large(href="/") ← Voltar à Lista Principal
