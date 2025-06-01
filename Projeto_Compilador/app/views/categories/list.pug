@@ -1,0 +1,57 @@
+extends ../layout
+
+block content
+  .d-flex.justify-content-between.align-items-center.mb-4
+    h1 
+      i.bi.bi-folder.me-2
+      | Categorias
+    if user && user.isAdmin
+      a.btn.btn-primary(href='/admin/categories/new') 
+        i.bi.bi-plus.me-1
+        | Nova Categoria
+
+  if categories && categories.length > 0
+    .row
+      each category in categories
+      pre= JSON.stringify(category, null, 2)
+        .col-md-4.mb-3
+          .card.h-100
+            .card-header.text-center.text-white(style=`background-color: ${category.color || '#007bff'};`)
+              h5.mb-0= category.name
+            
+            .card-body.text-center
+              if category.description
+                p.card-text= category.description
+              else
+                p.text-muted.card-text Sem descrição
+              
+              if category.parent
+                small.text-muted
+                  i.bi.bi-arrow-up.me-1
+                  | Subcategoria de: #{category.parent.name}
+            
+            .card-footer.text-center
+              a.btn.btn-primary(href=`/categories/${category._id}`) Ver Items
+              
+              if user && user.isAdmin
+                .mt-2
+                  a.btn.btn-outline-secondary.btn-sm.me-1(href=`/admin/categories/${category._id}/edit`) Editar
+                  button.btn.btn-outline-danger.btn-sm(onclick=`deleteCategory('${category._id}', '${category.name}')`) Eliminar
+
+  else
+    .alert.alert-info.text-center
+      h4 Nenhuma categoria encontrada
+      p O sistema ainda não tem categorias definidas.
+      if user && user.isAdmin
+        a.btn.btn-primary(href='/admin/categories/new') Criar Primeira Categoria
+
+  script.
+    function deleteCategory(id, name) {
+      if (confirm(`Eliminar categoria "${name}"?`)) {
+        const form = document.createElement('form');
+        form.method = 'POST';
+        form.action = `/admin/categories/${id}/delete`;
+        document.body.appendChild(form);
+        form.submit();
+      }
+    }

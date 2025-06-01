@@ -1,0 +1,161 @@
+[
+  {
+    "_id": "683cb77f6f30b0ff2e33c17a",
+    "action": "create",
+    "itemId": {
+      "_id": "683cac37529538398aed6458",
+      "title": "Viagem a Paris 2025"
+    },
+    "userId": {
+      "_id": "683c930a0545d30bc11c91d8",
+      "username": "pedrovieira712",
+      "name": "Pedro Vieira"
+    },
+    "ip": "::1",
+    "timestamp": "2025-06-01T20:26:39.319Z",
+    "processed": false
+  },
+  {
+    "_id": "683cb7796f30b0ff2e33c166",
+    "action": "create",
+    "itemId": {
+      "_id": "683cac37529538398aed6458",
+      "title": "Viagem a Paris 2025"
+    },
+    "userId": {
+      "_id": "683c930a0545d30bc11c91d8",
+      "username": "pedrovieira712",
+      "name": "Pedro Vieira"
+    },
+    "ip": "::1",
+    "timestamp": "2025-06-01T20:26:33.337Z",
+    "processed": false
+  },
+  {
+    "_id": "683cb76a6f30b0ff2e33c150",
+    "action": "delete",
+    "itemId": {
+      "_id": "683cac37529538398aed6458",
+      "title": "Viagem a Paris 2025"
+    },
+    "userId": {
+      "_id": "683c930a0545d30bc11c91d8",
+      "username": "pedrovieira712",
+      "name": "Pedro Vieira"
+    },
+    "ip": "::1",
+    "timestamp": "2025-06-01T20:26:18.398Z",
+    "processed": false
+  },
+  {
+    "_id": "683cb7546f30b0ff2e33c145",
+    "action": "create",
+    "itemId": {
+      "_id": "683cac37529538398aed6458",
+      "title": "Viagem a Paris 2025"
+    },
+    "userId": {
+      "_id": "683c930a0545d30bc11c91d8",
+      "username": "pedrovieira712",
+      "name": "Pedro Vieira"
+    },
+    "ip": "::1",
+    "timestamp": "2025-06-01T20:25:56.756Z",
+    "processed": false
+  },
+  {
+    "_id": "683cb7246f30b0ff2e33c12f",
+    "action": "create",
+    "itemId": {
+      "_id": "683c9da5e1a45d381a4b2855",
+      "title": "T"
+    },
+    "userId": {
+      "_id": "683c930a0545d30bc11c91d8",
+      "username": "pedrovieira712",
+      "name": "Pedro Vieira"
+    },
+    "ip": "::1",
+    "timestamp": "2025-06-01T20:25:08.625Z",
+    "processed": false
+  },
+  {
+    "_id": "683cb70b9de1093719984cc2",
+    "action": "create",
+    "itemId": {
+      "_id": "683c9da5e1a45d381a4b2855",
+      "title": "T"
+    },
+    "userId": {
+      "_id": "683c930a0545d30bc11c91d8",
+      "username": "pedrovieira712",
+      "name": "Pedro Vieira"
+    },
+    "ip": "::1",
+    "timestamp": "2025-06-01T20:24:43.489Z",
+    "processed": false
+  },
+  {
+    "_id": "683cb7059de1093719984cb2",
+    "action": "create",
+    "itemId": {
+      "_id": "683c9da5e1a45d381a4b2855",
+      "title": "T"
+    },
+    "userId": {
+      "_id": "683c930a0545d30bc11c91d8",
+      "username": "pedrovieira712",
+      "name": "Pedro Vieira"
+    },
+    "ip": "::1",
+    "timestamp": "2025-06-01T20:24:37.231Z",
+    "processed": false
+  },
+  {
+    "_id": "683cad0ea74b5b53685983d4",
+    "action": "download",
+    "itemId": {
+      "_id": "683cad09a74b5b53685983c7",
+      "title": "Viagem a Paris 2025"
+    },
+    "userId": null,
+    "ip": "::1",
+    "details": {
+      "exportFormat": "zip"
+    },
+    "processed": false,
+    "timestamp": "2025-06-01T19:42:06.834Z"
+  },
+  {
+    "_id": "683cad09a74b5b53685983cc",
+    "action": "upload",
+    "itemId": {
+      "_id": "683cad09a74b5b53685983c7",
+      "title": "Viagem a Paris 2025"
+    },
+    "userId": {
+      "_id": "683c930a0545d30bc11c91d8",
+      "username": "pedrovieira712",
+      "name": "Pedro Vieira"
+    },
+    "ip": "::1",
+    "processed": false,
+    "timestamp": "2025-06-01T19:42:01.627Z"
+  },
+  {
+    "_id": "683cac37529538398aed645d",
+    "action": "upload",
+    "itemId": {
+      "_id": "683cac37529538398aed6458",
+      "title": "Viagem a Paris 2025"
+    },
+    "userId": {
+      "_id": "683c930a0545d30bc11c91d8",
+      "username": "pedrovieira712",
+      "name": "Pedro Vieira"
+    },
+    "ip": "::1",
+    "processed": false,
+    "timestamp": "2025-06-01T19:38:31.042Z"
+  }
+]

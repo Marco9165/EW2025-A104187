@@ -1,0 +1,15 @@
+{
+  "title": "Viagem a Paris 2025",
+  "description": "Fotos e documentos da viagem",
+  "type": "mixed",
+  "category": "Viagens",
+  "producer": "João Silva",
+  "createdAt": "2025-01-15",
+  "isPublic": true,
+  "files": [
+    {
+      "filename": "foto1.jpg",
+      "description": "Torre Eiffel"
+    }
+  ]
+}
