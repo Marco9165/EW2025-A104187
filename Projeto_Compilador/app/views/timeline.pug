@@ -15,7 +15,7 @@ block content
         if item.isPublic || (user && (item.submitter._id === user.id || user.isAdmin))
           .timeline-item(class=index % 2 === 0 ? 'timeline-left' : 'timeline-right')
             .timeline-marker
-              i.bi(class=item.type === 'zip' ? 'bi-archive' : item.type === 'photo' ? 'bi-image' : item.type === 'document' ? 'bi-file-text' : 'bi-circle-fill')
+              i.bi(class=item.type === 'mixed' ? 'bi-archive' : item.type === 'photo' ? 'bi-image' : item.type === 'document' ? 'bi-file-text' : 'bi-circle-fill')
             
             .timeline-content
               .card.shadow-sm
@@ -73,12 +73,6 @@ block content
                           i.bi.bi-download.me-1
                           | Export
 
-    // Indicador de fim da timeline
-    .timeline-end
-      .timeline-marker.bg-secondary
-        i.bi.bi-flag
-      .text-center.text-muted.mt-2
-        small Início da sua jornada digital
 
   else
     .text-center.py-5
